@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/elementui.css">
+    <title>Demo</title>
+</head>
+
+<body>
+    <div class='ban' style="height:100%;background-image:url('C:\Users\田森林\Desktop\img.png')"></div>
+    <div id="app">
+            <el-button type="primary" @click="handleblock">块</el-button>
+            <el-button type="primary" @click="handleJiaoyi">交易</el-button>
+        <el-table :data="showRecentBlocks">
+                
+            <el-table-column label="高度">
+                <template slot-scope="scope">
+                    <el-button type="primary" @click="handleClick(scope)">{{scope.row.height}}</el-button>
+                    <!-- <a :href="'BlockDetail?blockhash='+scope.row.blockhash">{{scope.row.height}}</a> -->
+                </template>
+            </el-table-column>
+            <el-table-column prop="showtime" label="时间">
+            </el-table-column>
+            <el-table-column prop="txSize" label="交易数量">
+            </el-table-column>
+            <el-table-column prop="showSizeOnDisk" label="大小">
+            </el-table-column>
+        </el-table>
+    </div>
+
+    <script src="assets/js/axios.min.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/elementui.js"></script>
+    <script src="viewmodels/BlockRecent.js"></script>
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/img/img.jpg"></script>
+</body>
+
+</html>
